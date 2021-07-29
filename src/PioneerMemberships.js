@@ -11,7 +11,7 @@ import BlockSubscribe from './components/BlockSubscribe.jsx'
 import Top1 from './assets/images/memberships/Top1.jpg'
 import './assets/scss/index.scss'
 
-const PioneerMemberships = () => {
+const PioneerMemberships = (props) => {
   const [scroll, setScroll] = useState(0)
 
   const handleScroll = () => {
@@ -58,7 +58,7 @@ const PioneerMemberships = () => {
             backgroundRepeat: 'no-repeat',
           }}
           className='memberships__wrapper-nav'>
-          <Navigation />
+          <Navigation {...props} />
         </div>
         <div className='memberships__wrapper'>
           <Membership />
