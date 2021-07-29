@@ -4,12 +4,16 @@ import girl from '../assets/images/memberships/girl.png'
 import cup from '../assets/images/memberships/cup.svg'
 import finger from '../assets/images/memberships/finger.svg'
 
-const Navigation = (props) => {
+const Navigation = ({ setSubPage }) => {
   return (
     <div className='memberships__nav-inner'>
       <section className='memberships__nav'>
         <img src={icon} alt='' className='memberships__icon' />
-        <button className='memberships__back' onClick={props.onBtn}>
+        <button
+          className='memberships__back'
+          onClick={() => {
+            setSubPage('referralsPage')
+          }}>
           <span className='memberships__arrow-inner'>
             <span className='memberships__arrow'></span>
           </span>
