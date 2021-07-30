@@ -32,7 +32,13 @@ const Navigation = ({ setSubPage }) => {
           <h4 className='memberships__subtitle'>
             Become a premium Pioneer Member.
           </h4>
-          <button className='memberships__btn-more'>Learn more</button>
+          <button
+            className='memberships__btn-more'
+            onClick={() => {
+              alert('Hello from Pioneer Membership')
+            }}>
+            Learn more
+          </button>
         </div>
         <div className='memberships__block-information'>
           <div className='memberships__block-sum'>
