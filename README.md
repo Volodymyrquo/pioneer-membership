@@ -6,6 +6,7 @@ After building the module, in your application you can check that both versions 
 
 // node_modules/mymodule/src/index.js
 export { default as ReactFromModule } from 'react'
+
 // src/index.js
 import React from 'react'
 import { ReactFromModule } from 'mymodule'
