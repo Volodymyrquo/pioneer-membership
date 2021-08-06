@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import '../assets/scss/memberships/formPayment.scss'
 import { FormGroup, Input } from 'reactstrap'
 import close from '../assets/images/memberships/close.svg'
@@ -117,119 +116,113 @@ const FormPayment = ({ onClick }) => {
     }
   }
   return
-  ;<ReactCSSTransitionGroup
-    transitionName='anim'
-    transitionAppear={true}
-    transitionAppearTimeout={500}
-    transitionEnter={false}
-    transitionLeave={false}>
-    <section className='memberships__modal-form-block'>
-      <div className='memberships__modal-inner'>
-        <div className='memberships__modal-header'>
-          <p className='memberships__modal-title'>Payment details</p>
-          <img
-            className='memberships__modal-close'
-            src={close}
-            alt='button close'
-            onClick={() => {}}
-          />
-        </div>
-        <form
-          onSubmit={buyMembership}
-          method='POST'
-          action=''
-          className='memberships__modal-form'>
-          <Input
-            className='memberships__modal-select'
-            type='select'
-            name='memberPlan'
-            value={information.memberPlan}
-            onChange={applayForMembership}>
-            <option className='memberships__modal-select-option'>
-              Pioneer member plan: Bronze - $99.00
-            </option>
-            <option>Pioneer member plan: Silver - $199.00</option>
-            <option>Pioneer member plan: Gold - $399.00</option>
-          </Input>
 
-          <div className='memberships__modal-card-number'>
-            <CardNumber />
-            <FormGroup className='mb-0'>
-              <div className='memberships__modal-card-number-inner'>
-                <MY />
-                <CVV />
-              </div>
-            </FormGroup>
-          </div>
+  ;<section className='memberships__modal-form-block'>
+    <div className='memberships__modal-inner'>
+      <div className='memberships__modal-header'>
+        <p className='memberships__modal-title'>Payment details</p>
+        <img
+          className='memberships__modal-close'
+          src={close}
+          alt='button close'
+          onClick={() => {}}
+        />
+      </div>
+      <form
+        onSubmit={buyMembership}
+        method='POST'
+        action=''
+        className='memberships__modal-form'>
+        <Input
+          className='memberships__modal-select'
+          type='select'
+          name='memberPlan'
+          value={information.memberPlan}
+          onChange={applayForMembership}>
+          <option className='memberships__modal-select-option'>
+            Pioneer member plan: Bronze - $99.00
+          </option>
+          <option>Pioneer member plan: Silver - $199.00</option>
+          <option>Pioneer member plan: Gold - $399.00</option>
+        </Input>
+
+        <div className='memberships__modal-card-number'>
+          <CardNumber />
+          <FormGroup className='mb-0'>
+            <div className='memberships__modal-card-number-inner'>
+              <MY />
+              <CVV />
+            </div>
+          </FormGroup>
+        </div>
+        <Input
+          type='text'
+          name='nameCard'
+          value={information.nameCard}
+          onChange={applayForMembership}
+          className='form-control memberships__modal-name-card'
+          id='formrow-firstname-Input'
+          placeholder='Name on card'
+          required
+        />
+        <div className='memberships__modal-address-city'>
           <Input
             type='text'
-            name='nameCard'
-            value={information.nameCard}
-            onChange={applayForMembership}
-            className='form-control memberships__modal-name-card'
-            id='formrow-firstname-Input'
-            placeholder='Name on card'
+            className='form-control memberships__modal-address'
+            id='formrow-InputCity'
+            placeholder='Address line'
             required
+            name='addressLine'
+            value={information.addressLine}
+            onChange={applayForMembership}
           />
-          <div className='memberships__modal-address-city'>
-            <Input
-              type='text'
-              className='form-control memberships__modal-address'
-              id='formrow-InputCity'
-              placeholder='Address line'
-              required
-              name='addressLine'
-              value={information.addressLine}
-              onChange={applayForMembership}
-            />
-            <Input
-              type='text'
-              className='form-control memberships__modal-city'
-              id='formrow-InputCity'
-              placeholder='City'
-              required
-              name='city'
-              value={information.city}
-              onChange={applayForMembership}
-            />
-          </div>
-          <div className='memberships__modal-address-city memberships__border-form'>
-            <select
-              id='formrow-InputState'
-              className='form-control memberships__modal-country'
-              required
-              name='country'
-              value={information.country}
-              onChange={applayForMembership}>
-              <option defaultValue=''>Select a country</option>
-              <option>...</option>
-            </select>
-            <Input
-              type='text'
-              className='form-control memberships__modal-state'
-              id='formrow-InputCity'
-              placeholder='State'
-              required
-              name='state'
-              value={information.state}
-              onChange={applayForMembership}
-            />
-          </div>
+          <Input
+            type='text'
+            className='form-control memberships__modal-city'
+            id='formrow-InputCity'
+            placeholder='City'
+            required
+            name='city'
+            value={information.city}
+            onChange={applayForMembership}
+          />
+        </div>
+        <div className='memberships__modal-address-city memberships__border-form'>
+          <select
+            id='formrow-InputState'
+            className='form-control memberships__modal-country'
+            required
+            name='country'
+            value={information.country}
+            onChange={applayForMembership}>
+            <option defaultValue=''>Select a country</option>
+            <option>...</option>
+          </select>
+          <Input
+            type='text'
+            className='form-control memberships__modal-state'
+            id='formrow-InputCity'
+            placeholder='State'
+            required
+            name='state'
+            value={information.state}
+            onChange={applayForMembership}
+          />
+        </div>
 
-          <div className='memberships__modal-btn-block'>
-            <button
-              onClick={buyMembership}
-              type='submit'
-              className='memberships__modal-buy'>
-              {`Charge My Card $${result} Now`}
-            </button>
-            <button onClick={() => {}} className='memberships__modal-cancel'>
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </ReactCSSTransitionGroup>
+        <div className='memberships__modal-btn-block'>
+          <button
+            onClick={buyMembership}
+            type='submit'
+            className='memberships__modal-buy'>
+            {`Charge My Card $${result} Now`}
+          </button>
+          <button onClick={() => {}} className='memberships__modal-cancel'>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 }
 export default FormPayment

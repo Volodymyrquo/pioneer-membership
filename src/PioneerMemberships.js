@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { Membership } from './components/Membership/Membership.jsx'
 import Navigation from './components/Navigation.jsx'
 import BlockIncome from './components/BlockIncome.jsx'
@@ -32,57 +31,50 @@ const PioneerMemberships = (props) => {
   }, [])
 
   return (
-    <ReactCSSTransitionGroup
-      transitionName='anim'
-      transitionAppear={true}
-      transitionAppearTimeout={5000}
-      transitionEnter={false}
-      transitionLeave={false}>
-      <div className='memberships'>
-        {scroll > 300 ? (
-          <button onClick={handleUpButton} className='memberships__button-up'>
-            <div className='arrow-down0'>
-              <span className='arrow-down1'></span>
-              <span className='arrow-down2'></span>
-              <span className='arrow-down3'></span>
-            </div>
-            Up
-          </button>
-        ) : null}
+    <div className='memberships'>
+      {scroll > 300 ? (
+        <button onClick={handleUpButton} className='memberships__button-up'>
+          <div className='arrow-down0'>
+            <span className='arrow-down1'></span>
+            <span className='arrow-down2'></span>
+            <span className='arrow-down3'></span>
+          </div>
+          Up
+        </button>
+      ) : null}
 
-        <div
-          style={{
-            background: `url(${Top1})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-          className='memberships__wrapper-nav'>
-          <Navigation {...props} />
-        </div>
-        <div className='memberships__wrapper'>
-          <Membership />
-        </div>
-        <div className='memberships__income'>
-          <BlockIncome />
-        </div>
-        <div className='memberships__benefit'>
-          <BlockBenefit />
-        </div>
-        <div className='memberships__range'>
-          <BlockRange />
-        </div>
-        <div className='memberships__after-upgrade-wrapper'>
-          <BlockAfterUpgrade />
-        </div>
-        <div className='memberships__question-wrapper'>
-          <BlockQuestion />
-        </div>
-        <div className='memberships__subscribe-wrapper'>
-          <BlockSubscribe />
-        </div>
+      <div
+        style={{
+          background: `url(${Top1})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
+        className='memberships__wrapper-nav'>
+        <Navigation {...props} />
       </div>
-    </ReactCSSTransitionGroup>
+      <div className='memberships__wrapper'>
+        <Membership />
+      </div>
+      <div className='memberships__income'>
+        <BlockIncome />
+      </div>
+      <div className='memberships__benefit'>
+        <BlockBenefit />
+      </div>
+      <div className='memberships__range'>
+        <BlockRange />
+      </div>
+      <div className='memberships__after-upgrade-wrapper'>
+        <BlockAfterUpgrade />
+      </div>
+      <div className='memberships__question-wrapper'>
+        <BlockQuestion />
+      </div>
+      <div className='memberships__subscribe-wrapper'>
+        <BlockSubscribe />
+      </div>
+    </div>
   )
 }
 export default PioneerMemberships
